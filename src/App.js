@@ -1,11 +1,22 @@
 import React, { Component, Fragment } from 'react';
-import FilmItem from './components/films/FilmItem';
 import films from './data/films.json';
+import FilmList from './components/films/FilmList';
+import Header from './components/misc/Header';
 
 class App extends Component {
   render() {
     return (
-      <FilmItem {...films[0]} />
+      <Fragment>
+        <Header />
+        <div className="container">
+          <div className="row">
+            <div className="col-12">
+              <FilmList films={films} />
+            </div>
+          </div>
+        </div>
+      </Fragment>
+      
     );
   }
 }
