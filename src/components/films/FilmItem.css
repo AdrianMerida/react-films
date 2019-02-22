@@ -5,3 +5,13 @@
   top: 10px;
   cursor: pointer;
 }
+
+.card-body {
+  position: relative;
+}
+
+.film-genres {
+  position: absolute;
+  left: 10px;
+  top: -30px;
+}

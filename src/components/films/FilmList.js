@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import FilmItem from './FilmItem';
 
 export default class FilmList extends Component {
+  
   constructor(props) {
     super(props);
     this.state = {
