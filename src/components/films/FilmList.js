@@ -3,11 +3,8 @@ import FilmItem from './FilmItem'
 import films from '../../data/films'
 
 class FilmList extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      films: [...films] || []
-    }
+  state = {
+    films: [...films] || []
   }
 
   onClickDeleteFilm = film => {
