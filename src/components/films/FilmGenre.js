@@ -1,29 +1,20 @@
-import React from 'react';
+import React from 'react'
 
-const getGenreColor = (genre) => {
-  switch (genre) {
-    case 'Action':
-    case 'Romance':
-    case 'Animation':
-      return 'danger';
-    case 'Fantasy':
-    case 'Adventure':
-      return 'success';
-    case 'Drama':
-      return 'secondary';
-    case 'Crime':
-    case 'Horror':
-      return 'warning';
-    default:
-      return 'info';
-  }
+const colorOptions = {
+  action: 'danger',
+  romance: 'danger',
+  animation: 'danger',
+  fantasy: 'success',
+  adventure: 'success',
+  drama: 'secondary',
+  crime: 'warning',
+  horror: 'warning'
 }
 
-const FilmGenre = (props) => {
-  let color = getGenreColor(props.genre);
-  return (
-    <span className={"badge mr-1 badge-" + color}>{props.genre}</span>
-  )
-}
+const getGenreColor = genre => colorOptions[genre.toLowerCase()] || 'info'
 
-export default FilmGenre;
+const FilmGenre = ({ genre }) => (
+  <span className={`badge mr-1 badge-${getGenreColor(genre)}`}>{genre}</span>
+)
+
+export default FilmGenre

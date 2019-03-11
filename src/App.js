@@ -1,24 +1,18 @@
-import React, { Component, Fragment } from 'react';
-import films from './data/films.json';
-import FilmList from './components/films/FilmList';
-import Header from './components/misc/Header';
+import React, { Fragment } from 'react'
+import FilmList from './components/films/FilmList'
+import Header from './components/misc/Header'
 
-class App extends Component {
-  render() {
-    return (
-      <Fragment>
-        <Header />
-        <div className="container">
-          <div className="row">
-            <div className="col-12">
-              <FilmList films={films} />
-            </div>
-          </div>
+const App = () => (
+  <Fragment>
+    <Header />
+    <div className="container">
+      <div className="row">
+        <div className="col-12">
+          <FilmList />
         </div>
-      </Fragment>
-      
-    );
-  }
-}
+      </div>
+    </div>
+  </Fragment>
+)
 
-export default App;
+export default App
