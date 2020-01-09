@@ -1,29 +1,38 @@
 import React, { Component } from 'react'
 import FilmItem from './FilmItem'
-import films from '../../data/films'
+import filmsData from '../../data/films.json'
 
 class FilmList extends Component {
   state = {
-    films: [...films] || []
+    films: []
   }
 
-  onClickDeleteFilm = film => {
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({ films: filmsData })
+    }, 1000)
+  }
+
+  onClickDeleteFilm(film) {
     this.setState({
       films: this.state.films.filter(f => f !== film)
     })
   }
 
-  listFilms = () =>
-    this.state.films.map((film, index) => (
+  render() {
+    const filmsList = this.state.films.map((film, index) => (
       <FilmItem
         key={index}
         {...film}
-        onClickDelete={this.onClickDeleteFilm.bind(this, film)}
+        onClickDelete={() => this.onClickDeleteFilm(film)}
       />
     ))
 
-  render() {
-    return <div className="card-columns">{this.listFilms()}</div>
+    return (
+      <div className="card-columns">
+        {filmsList.length > 0 ? filmsList : 'Loading...'}
+      </div>
+    )
   }
 }
 

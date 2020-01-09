@@ -1,16 +1,16 @@
 
-.delete-film {
+.FilmItem .delete-film {
   position: absolute;
   right: 10px;
   top: 10px;
   cursor: pointer;
 }
 
-.card-body {
+.FilmItem .card-body {
   position: relative;
 }
 
-.film-genres {
+.FilmItem .film-genres {
   position: absolute;
   left: 10px;
   top: -30px;

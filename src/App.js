@@ -1,10 +1,11 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import FilmList from './components/films/FilmList'
 import Header from './components/misc/Header'
 
 const App = () => (
-  <Fragment>
+  <div className="App">
     <Header />
+
     <div className="container">
       <div className="row">
         <div className="col-12">
@@ -12,7 +13,7 @@ const App = () => (
         </div>
       </div>
     </div>
-  </Fragment>
+  </div>
 )
 
 export default App
